@@ -1,0 +1,46 @@
+body {
+    margin: 50px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "Manrope";
+    text-align: center;
+}
+
+.tabs {
+    background-color: #f1f1f1;
+    border: 1px solid;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.tablink {
+    width: 200px;
+}
+
+.tablink:hover {
+    background-color: #ddd;
+}
+
+.tablink.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+}
+
+#red {
+    background-color: red;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#green {
+    background-color: green;
+}
