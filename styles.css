@@ -44,7 +44,28 @@ h1 {
     margin-right: 20vw;
     margin-top: 5vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.btn__display {
+    font-size: large;
+    padding: 10px 40px;
+    min-width: 10vw;
+    background-color: coral;
+}
+
+.btn__random {
+    min-width: 10vw;
+    font-size: large;
+    padding: 10px 30px;
+    background-color: #93c572;
+}
+
+.moviePoster {
+    padding: 18px;
+    max-width: 200px;
+    max-height: 345px;
 }
 
 /* Practice with tabs */
