@@ -4,6 +4,11 @@ body {
     box-sizing: border-box;
 }
 
+header {
+    display: flex;
+    justify-content: center;
+}
+
 h1 {
     font-family: "Manrope";
     text-align: center;
@@ -13,12 +18,13 @@ h1 {
     background-color: #f1f1f1;
     border: 1px solid;
     height: 50px;
+    width: 1120px;
     display: flex;
     justify-content: center;
 }
 
 .tablink {
-    width: 200px;
+    width: 280px;
 }
 
 .tablink:hover {
@@ -33,7 +39,16 @@ h1 {
     display: none;
 }
 
-#red {
+#content {
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+}
+
+/* Practice with tabs */
+/* #red {
     background-color: red;
 }
 
@@ -43,4 +58,4 @@ h1 {
 
 #green {
     background-color: green;
-}
+} */
