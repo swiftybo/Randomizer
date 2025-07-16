@@ -20,21 +20,31 @@
         <h1>Gabriella & Jordan's Randomizer!</h1>
         <header>
             <nav class="tabs">
-                <button class="tablink" id="filmtab">Films 🎥</button>
-                <button class="tablink">Restaurants 🥡</button>
-                <button class="tablink">Activities ⛸️🕹️🎨</button>
-                <button class="tablink">Cook Together 🍳</button>
+                <button class="tab__btn" id="filmTab">Films 🎥</button>
+                <button class="tab__btn" id="restaurantTab">
+                    Restaurants 🥡
+                </button>
+                <button class="tab__btn" id="activityTab">
+                    Activities ⛸️🕹️🎨
+                </button>
+                <button class="tab__btn" id="recipeTab">
+                    Cook Together 🍳
+                </button>
             </nav>
         </header>
 
         <div id="content">
-            <!-- <p style="font-size: large">
-                Welcome to the randomizer! I'm here to help pick out something
-                for yous to do! Click on one of the tabs to start!
-            </p>
-             -->
-            <!-- <button class="btn__display">Display</button>
-            <button class="btn__random">Randomize!!</button> -->
+            <div class="content active" , id="home__content">
+                <p style="font-size: large">
+                    Welcome to the randomizer! I'm here to help pick out
+                    something for yous to do! Click on one of the tabs to start!
+                </p>
+            </div>
+
+            <div class="content" , id="film__content">
+                <button class="btn__display">Display</button>
+                <button class="btn__random">Randomize!!</button>
+            </div>
 
             <!-- <div id="red" class="tabcontent">
                 <h3>This is red!</h3>

@@ -27,14 +27,7 @@ function displayFilms(films) {
 
 // displayFilms(filmList);
 
-export function renderUI() {
-    console.log("Rendering display");
-    const html = `<button class="btn__display">Display</button>
-            <button class="btn__random">Randomize!!</button>`;
-
-    content.insertAdjacentHTML("afterend", html);
-}
-
+const displayBtn = document.querySelector(".btn__display");
 displayBtn.addEventListener("click", function () {
     displayFilms(filmList);
 });

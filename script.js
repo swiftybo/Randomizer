@@ -1,14 +1,53 @@
-"use strict";
+//////////////////////////////////////////////////////
+// Imports
+import { renderUI as renderFilmUI } from "./films.js";
 
-// Practice with tabs
+//////////////////////////////////////////////////////
+// Constants
+let activeTab;
 
-import { renderUI } from "./films.js";
+//////////////////////////////////////////////////////
+// DOM Elements
 
-const tabContents = document.querySelectorAll(".tabcontent");
-const tabLinks = document.querySelectorAll(".tablink");
-const content = document.getElementById("content");
-const displayBtn = document.querySelector(".btn__display");
-const filmButton = document.getElementById("filmtab");
+// Buttons
+const tabBtns = document.querySelectorAll(".tab__btn");
+const filmBtn = document.getElementById("filmTab");
+const restaurantBtn = document.getElementById("restaurantTab");
+const activityBtn = document.getElementById("activityTab");
+const recipeBtn = document.getElementById("recipeTab");
+
+// Content
+const topContent = document.getElementById("content");
+const allContent = document.querySelectorAll(".content");
+const homepage = document.getElementById("home__content");
+const filmpage = document.getElementById("film__content");
+
+//////////////////////////////////////////////////////
+// Event Listeners
+
+filmBtn.addEventListener("click", function () {
+    console.log("Film tab clicked");
+    openTab.call(this);
+
+    // activate display for film page
+    filmpage.classList.add("activeContent");
+});
+
+function openTab() {
+    tabBtns.forEach((tab) => {
+        // hide displays for all contents i.e. remove active class from all contents
+        allContent.forEach((content) =>
+            content.classList.remove("activeContent")
+        );
+
+        // apply styling for active tab
+        tabBtns.forEach((btn) => btn.classList.remove("activeTab"));
+        this.classList.add("activeTab");
+    });
+}
+
+//////////////////////////////////////////////////////
+// PRACTICE
 
 // // Practice with tabs
 // const openColour = function (colour) {
@@ -36,8 +75,3 @@ const filmButton = document.getElementById("filmtab");
 //         event.currentTarget.classList.add("active");
 //     });
 // });
-
-filmButton.addEventListener("click", function () {
-    console.log("film tab clicked");
-    renderUI();
-});

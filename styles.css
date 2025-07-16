@@ -23,15 +23,15 @@ h1 {
     justify-content: center;
 }
 
-.tablink {
+.tab__btn {
     width: 280px;
 }
 
-.tablink:hover {
+.tab__btn:hover {
     background-color: #ddd;
 }
 
-.tablink.active {
+.tab__btn.activeTab {
     background-color: #ccc;
 }
 
@@ -46,6 +46,14 @@ h1 {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.content {
+    display: none;
+}
+
+.activeContent {
+    display: block;
 }
 
 .btn__display {
