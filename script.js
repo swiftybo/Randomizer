@@ -4,7 +4,6 @@ import { displayFilms } from "./films.js";
 
 //////////////////////////////////////////////////////
 // Constants
-let activeTab;
 
 //////////////////////////////////////////////////////
 // DOM Elements
@@ -24,6 +23,7 @@ const allContent = document.querySelectorAll(".content");
 const homepage = document.getElementById("home__content");
 const filmpage = document.getElementById("film__content");
 
+const posterSection = document.querySelector(".posters");
 //////////////////////////////////////////////////////
 // Event Listeners
 
@@ -32,19 +32,18 @@ filmBtn.addEventListener("click", function () {
     openTab.call(this);
 
     // activate display for film page
-    filmpage.classList.add("activeContent");
+    filmpage.style.display = "flex";
 });
 
 displayBtn.addEventListener("click", function () {
+    posterSection.innerHTML = "";
     displayFilms();
 });
 
 function openTab() {
     tabBtns.forEach((tab) => {
         // hide displays for all contents i.e. remove active class from all contents
-        allContent.forEach((content) =>
-            content.classList.remove("activeContent")
-        );
+        allContent.forEach((content) => (content.style.display = "none"));
 
         // apply styling for active tab
         tabBtns.forEach((btn) => btn.classList.remove("activeTab"));

@@ -22,9 +22,6 @@ const filmList = [
 ];
 
 export function displayFilms() {
-    const filmTitles = filmList.map((film) => film.title);
-    console.log(filmTitles);
-
     getPosters();
 }
 
@@ -49,3 +46,10 @@ function getPosters() {
             });
     });
 }
+
+function randomize() {
+    const filmCount = filmList.length;
+    const randFilmNum = Math.floor(Math.random() * 10);
+}
+
+randomize();

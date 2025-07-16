@@ -1,17 +1,17 @@
 body {
-    margin: 50px;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-header {
-    display: flex;
-    justify-content: center;
 }
 
 h1 {
     font-family: "Manrope";
     text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
 }
 
 .tabs {
@@ -20,7 +20,6 @@ h1 {
     height: 50px;
     width: 1120px;
     display: flex;
-    justify-content: center;
 }
 
 .tab__btn {
@@ -36,47 +35,54 @@ h1 {
 }
 
 #content {
-    margin-left: 10vw;
-    margin-right: 10vw;
-    margin-top: 4vh;
-    display: flex;
+    margin: 2rem auto;
+    width: 50%;
+    /* border: 3px solid green; */
+
+    /* display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
 }
 
 .content {
     display: none;
-}
-
-.activeContent {
-    display: inline;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .buttonSection {
-    margin: 1rem;
-    width: 30vw;
+    margin: 1.5rem;
+    margin-bottom: 3rem;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+}
+
+.film__btn {
+    font-size: large;
+    padding: 10px 30px;
+    min-width: 12vw;
 }
 
 .display__btn {
-    font-size: large;
-    padding: 10px 40px;
-    min-width: 12vw;
     background-color: coral;
 }
 
 .random__btn {
-    min-width: 12vw;
-    font-size: large;
-    padding: 10px 30px;
     background-color: #93c572;
 }
 
+.blitz__btn {
+    background-color: rgb(197, 137, 197);
+}
+
 .posters {
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 8rem;
 }
 
 .moviePoster {
