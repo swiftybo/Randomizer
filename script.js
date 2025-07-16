@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////
 // Imports
-import { renderUI as renderFilmUI } from "./films.js";
+import { displayFilms } from "./films.js";
 
 //////////////////////////////////////////////////////
 // Constants
@@ -15,6 +15,8 @@ const filmBtn = document.getElementById("filmTab");
 const restaurantBtn = document.getElementById("restaurantTab");
 const activityBtn = document.getElementById("activityTab");
 const recipeBtn = document.getElementById("recipeTab");
+
+const displayBtn = document.querySelector(".display__btn");
 
 // Content
 const topContent = document.getElementById("content");
@@ -31,6 +33,10 @@ filmBtn.addEventListener("click", function () {
 
     // activate display for film page
     filmpage.classList.add("activeContent");
+});
+
+displayBtn.addEventListener("click", function () {
+    displayFilms();
 });
 
 function openTab() {

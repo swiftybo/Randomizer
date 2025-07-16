@@ -35,16 +35,12 @@ h1 {
     background-color: #ccc;
 }
 
-.tabcontent {
-    display: none;
-}
-
 #content {
-    margin-left: 20vw;
-    margin-right: 20vw;
-    margin-top: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 4vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
@@ -53,21 +49,34 @@ h1 {
 }
 
 .activeContent {
-    display: block;
+    display: inline;
 }
 
-.btn__display {
+.buttonSection {
+    margin: 1rem;
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.display__btn {
     font-size: large;
     padding: 10px 40px;
-    min-width: 10vw;
+    min-width: 12vw;
     background-color: coral;
 }
 
-.btn__random {
-    min-width: 10vw;
+.random__btn {
+    min-width: 12vw;
     font-size: large;
     padding: 10px 30px;
     background-color: #93c572;
+}
+
+.posters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .moviePoster {

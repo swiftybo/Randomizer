@@ -1,3 +1,5 @@
+const posterSection = document.querySelector(".posters");
+
 const filmList = [
     { title: "The Godfather", year: 1972, status: "not watched" },
     { title: "12 Angry Men", year: 1957, status: "not watched" },
@@ -19,20 +21,14 @@ const filmList = [
     { title: "Your Name.", year: 2016, status: "not watched" },
 ];
 
-function displayFilms(films) {
-    filmTitles = films.map((film) => film.title);
-
+export function displayFilms() {
+    const filmTitles = filmList.map((film) => film.title);
     console.log(filmTitles);
+
+    getPosters();
 }
 
-// displayFilms(filmList);
-
-const displayBtn = document.querySelector(".btn__display");
-displayBtn.addEventListener("click", function () {
-    displayFilms(filmList);
-});
-
-function getPosters(filmList) {
+function getPosters() {
     filmList.forEach((film) => {
         const Poster = document.createElement("img");
         Poster.classList.add("moviePoster");
@@ -49,7 +45,7 @@ function getPosters(filmList) {
             .then((data) => {
                 Poster.src = data.Poster;
 
-                content.appendChild(Poster);
+                posterSection.appendChild(Poster);
             });
     });
 }
