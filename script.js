@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////
 // Imports
-import { displayFilms } from "./films.js";
+import { getAllPosters, randomize, blitz } from "./films.js";
 
 //////////////////////////////////////////////////////
 // Constants
@@ -8,14 +8,17 @@ import { displayFilms } from "./films.js";
 //////////////////////////////////////////////////////
 // DOM Elements
 
-// Buttons
+// Tabs
 const tabBtns = document.querySelectorAll(".tab__btn");
 const filmBtn = document.getElementById("filmTab");
 const restaurantBtn = document.getElementById("restaurantTab");
 const activityBtn = document.getElementById("activityTab");
 const recipeBtn = document.getElementById("recipeTab");
 
+// Buttons
 const displayBtn = document.querySelector(".display__btn");
+const randomizeBtn = document.querySelector(".random__btn");
+const blitzBtn = document.querySelector(".blitz__btn");
 
 // Content
 const topContent = document.getElementById("content");
@@ -24,6 +27,7 @@ const homepage = document.getElementById("home__content");
 const filmpage = document.getElementById("film__content");
 
 const posterSection = document.querySelector(".posters");
+
 //////////////////////////////////////////////////////
 // Event Listeners
 
@@ -37,15 +41,27 @@ filmBtn.addEventListener("click", function () {
 
 displayBtn.addEventListener("click", function () {
     posterSection.innerHTML = "";
-    displayFilms();
+    getAllPosters();
 });
+
+randomizeBtn.addEventListener("click", function () {
+    posterSection.innerHTML = "";
+    randomize();
+});
+
+blitzBtn.addEventListener("click", function () {
+    blitz();
+});
+
+//////////////////////////////////////////////////////
+// Functions
 
 function openTab() {
     tabBtns.forEach((tab) => {
-        // hide displays for all contents i.e. remove active class from all contents
+        // hide displays for all contents
         allContent.forEach((content) => (content.style.display = "none"));
 
-        // apply styling for active tab
+        // add class to style active tab
         tabBtns.forEach((btn) => btn.classList.remove("activeTab"));
         this.classList.add("activeTab");
     });

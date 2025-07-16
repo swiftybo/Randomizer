@@ -21,35 +21,73 @@ const filmList = [
     { title: "Your Name.", year: 2016, status: "not watched" },
 ];
 
-export function displayFilms() {
-    getPosters();
-}
+//////////////////////////////////////////////////////
+// Functions
 
-function getPosters() {
+// fetches movie posters from OMDb API using film titles from film list
+export function getAllPosters() {
     filmList.forEach((film) => {
-        const Poster = document.createElement("img");
-        Poster.classList.add("moviePoster");
-
-        const filmStr = encodeURIComponent(film.title)
-            .toLowerCase()
-            .replace(" ", "+");
-        const filmReleaseDate = film.year;
-
-        fetch(
-            `http://www.omdbapi.com/?t=${filmStr}&y=${filmReleaseDate}&apikey=6f14816c`
-        )
-            .then((res) => res.json())
-            .then((data) => {
-                Poster.src = data.Poster;
-
-                posterSection.appendChild(Poster);
-            });
+        getPoster(film);
     });
 }
 
-function randomize() {
-    const filmCount = filmList.length;
-    const randFilmNum = Math.floor(Math.random() * 10);
+// // getPoster function WITHOUT using async await
+// function getPoster(film) {
+//     const Poster = document.createElement("img");
+//     Poster.classList.add("moviePoster");
+
+//     const filmStr = encodeURIComponent(film.title)
+//         .toLowerCase()
+//         .replace(" ", "+");
+//     const filmReleaseDate = film.year;
+
+//     fetch(
+//         `http://www.omdbapi.com/?t=${filmStr}&y=${filmReleaseDate}&apikey=6f14816c`
+//     )
+//         .then((res) => res.json())
+//         .then((data) => {
+//             Poster.src = data.Poster;
+
+//             posterSection.appendChild(Poster);
+//         });
+// }
+
+async function getPoster(film) {
+    const Poster = document.createElement("img");
+    Poster.classList.add("moviePoster");
+
+    const filmStr = encodeURIComponent(film.title)
+        .toLowerCase()
+        .replace(" ", "+");
+    const filmReleaseDate = film.year;
+
+    const res = await fetch(
+        `http://www.omdbapi.com/?t=${filmStr}&y=${filmReleaseDate}&apikey=6f14816c`
+    );
+    const data = await res.json();
+    Poster.src = data.Poster;
+
+    posterSection.appendChild(Poster);
 }
 
-randomize();
+// generates random integer which relates to an index in the film list
+export function randomize() {
+    const randFilmNum = Math.floor(Math.random() * filmList.length);
+    const randomText = document.createElement("div");
+    posterSection.appendChild(randomText);
+    randomText.style.fontSize = "30px";
+    randomText.style.color = "chartreuse";
+    randomText.textContent = "The movie we're watching is...";
+
+    getPoster(filmList[randFilmNum]);
+}
+
+// generates to random movie posters for the user to choose from
+export function blitz() {
+    const randNum = Math.floor(Math.random() * 7 + 3);
+    console.log(randNum);
+
+    getAllPosters();
+    const displayedFilms = document.querySelectorAll(".moviePoster");
+    console.log(displayedFilms);
+}

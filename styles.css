@@ -30,7 +30,7 @@ header {
     background-color: #ddd;
 }
 
-.tab__btn.activeTab {
+.activeTab {
     background-color: #ccc;
 }
 
@@ -81,6 +81,7 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     margin-bottom: 8rem;
 }
