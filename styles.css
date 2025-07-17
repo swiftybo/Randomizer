@@ -92,6 +92,10 @@ header {
     max-height: 345px;
 }
 
+#map {
+    height: 180px;
+}
+
 /* Practice with tabs */
 /* #red {
     background-color: red;
