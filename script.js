@@ -48,9 +48,8 @@ restaurantBtn.addEventListener("click", function () {
     openTab.call(this);
 
     restaurantPage.style.display = "flex";
-    renderMap();
-    createMarker(51.45607, -0.96966);
-    // mapContent.style.display = "block";
+    // renderMap();
+    // createMarker(51.45607, -0.96966);
 });
 
 //////////////////////////////////////////////////////

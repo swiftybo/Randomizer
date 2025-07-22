@@ -2,6 +2,7 @@ const access_token =
     "pk.eyJ1IjoiYm90aGVzbG90aCIsImEiOiJjbWRhdG0waGkwY3JiMmtzYmtrb2E0cDk5In0.eOoTxdbFyqX02dY6VYpIaw";
 
 const topContent = document.getElementById("content");
+const restaurantSection = document.querySelector(".restaurants");
 let map;
 
 const restaurantList = [
@@ -79,6 +80,9 @@ const restaurantList = [
     },
 ];
 
+/////////////////////////////////////////////////////
+// Functions
+
 export function renderMap() {
     console.log("creating map now");
 
@@ -107,3 +111,25 @@ function encodeAddress(restaurant) {
 }
 
 encodeAddress(restaurantList[0]);
+
+function addRestaurantRow(
+    restaurant_name,
+    restaurant_location,
+    restaurant_cuisine
+) {
+    const html = `<div class="table__row">
+                        <div class="name__field">${restaurant_name}</div>
+                        <div class="city__field">${restaurant_location}</div>
+                        <div class="cuisine__field">${restaurant_cuisine}</div>
+                    </div>`;
+
+    restaurantSection.insertAdjacentHTML("beforeend", html);
+}
+
+restaurantList.forEach((restaurant) => {
+    addRestaurantRow(
+        restaurant.name,
+        restaurant.city,
+        restaurant.countryCuisine
+    );
+});
