@@ -37,11 +37,6 @@ header {
 #content {
     margin: 2rem auto;
     width: 50%;
-    /* border: 3px solid green; */
-
-    /* display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap; */
 }
 
 .content {
@@ -59,7 +54,8 @@ header {
     justify-content: space-evenly;
 }
 
-.film__btn {
+.film__btn,
+.restaurant__btn {
     font-size: large;
     padding: 10px 30px;
     min-width: 12vw;
@@ -93,7 +89,8 @@ header {
 }
 
 #map {
-    height: 180px;
+    height: 40vh;
+    width: 40vw;
 }
 
 /* Practice with tabs */

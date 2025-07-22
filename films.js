@@ -1,5 +1,10 @@
 const posterSection = document.querySelector(".posters");
 
+// Buttons
+const displayBtn = document.querySelector(".display__btn");
+const randomizeBtn = document.querySelector(".random__btn");
+const blitzBtn = document.querySelector(".blitz__btn");
+
 const filmList = [
     { title: "The Godfather", year: 1972, status: "not watched" },
     { title: "12 Angry Men", year: 1957, status: "not watched" },
@@ -90,4 +95,20 @@ export function blitz() {
     getAllPosters();
     const displayedFilms = document.querySelectorAll(".moviePoster");
     console.log(displayedFilms);
+}
+
+export function activateFilmButtons() {
+    displayBtn.addEventListener("click", function () {
+        posterSection.innerHTML = "";
+        getAllPosters();
+    });
+
+    randomizeBtn.addEventListener("click", function () {
+        posterSection.innerHTML = "";
+        randomize();
+    });
+
+    blitzBtn.addEventListener("click", function () {
+        blitz();
+    });
 }

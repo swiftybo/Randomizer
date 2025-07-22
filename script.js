@@ -1,6 +1,7 @@
 //////////////////////////////////////////////////////
 // Imports
-import { getAllPosters, randomize, blitz } from "./films.js";
+import { activateFilmButtons } from "./films.js";
+import { renderMap, createMarker } from "./restaurants.js";
 
 //////////////////////////////////////////////////////
 // Constants
@@ -21,12 +22,14 @@ const randomizeBtn = document.querySelector(".random__btn");
 const blitzBtn = document.querySelector(".blitz__btn");
 
 // Content
-const topContent = document.getElementById("content");
 const allContent = document.querySelectorAll(".content");
-const homepage = document.getElementById("home__content");
-const filmpage = document.getElementById("film__content");
+// const homepage = document.getElementById("home__content");
+const filmPage = document.getElementById("film__content");
+const restaurantPage = document.getElementById("restaurant__content");
 
 const posterSection = document.querySelector(".posters");
+
+const mapContent = document.querySelector("#map");
 
 //////////////////////////////////////////////////////
 // Event Listeners
@@ -36,21 +39,18 @@ filmBtn.addEventListener("click", function () {
     openTab.call(this);
 
     // activate display for film page
-    filmpage.style.display = "flex";
+    filmPage.style.display = "flex";
+    activateFilmButtons();
 });
 
-displayBtn.addEventListener("click", function () {
-    posterSection.innerHTML = "";
-    getAllPosters();
-});
+restaurantBtn.addEventListener("click", function () {
+    console.log("Restaurant tab clicked");
+    openTab.call(this);
 
-randomizeBtn.addEventListener("click", function () {
-    posterSection.innerHTML = "";
-    randomize();
-});
-
-blitzBtn.addEventListener("click", function () {
-    blitz();
+    restaurantPage.style.display = "flex";
+    renderMap();
+    createMarker(51.45607, -0.96966);
+    // mapContent.style.display = "block";
 });
 
 //////////////////////////////////////////////////////
@@ -66,33 +66,3 @@ function openTab() {
         this.classList.add("activeTab");
     });
 }
-
-//////////////////////////////////////////////////////
-// PRACTICE
-
-// // Practice with tabs
-// const openColour = function (colour) {
-//     // Hide all tab content
-//     tabContents.forEach((tab) => {
-//         return (tab.style.display = "none");
-//     });
-
-//     // Remove active tab styling
-//     tabLinks.forEach((tab) => {
-//         return tab.classList.remove("active");
-//     });
-
-//     // Display tab content of colour
-//     const colourContent = document.getElementById(colour);
-//     colourContent.style.display = "block";
-// };
-
-// tabLinks.forEach((tab) => {
-//     tab.addEventListener("click", function (event) {
-//         const colour = tab.textContent.toLowerCase();
-//         openColour(colour);
-
-//         // console.log(event.currentTarget);
-//         event.currentTarget.classList.add("active");
-//     });
-// });

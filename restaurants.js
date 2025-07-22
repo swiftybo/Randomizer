@@ -1,3 +1,9 @@
+const access_token =
+    "pk.eyJ1IjoiYm90aGVzbG90aCIsImEiOiJjbWRhdG0waGkwY3JiMmtzYmtrb2E0cDk5In0.eOoTxdbFyqX02dY6VYpIaw";
+
+const topContent = document.getElementById("content");
+let map;
+
 const restaurantList = [
     {
         name: "The Bap",
@@ -5,6 +11,8 @@ const restaurantList = [
         type: "Meal",
         continentalCuisine: "Asian",
         countryCuisine: "Korean",
+        address: "23 Market Place",
+        postcode: "RG1 2DE",
     },
     {
         name: "Norma",
@@ -70,3 +78,32 @@ const restaurantList = [
         countryCuisine: "USA",
     },
 ];
+
+export function renderMap() {
+    console.log("creating map now");
+
+    const html = `<div id="map"></div>`;
+    topContent.insertAdjacentHTML("beforeend", html);
+
+    map = L.map("map").setView([51.505, -0.09], 13);
+
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+}
+
+export function createMarker(lat, lng) {
+    const restaurantMarker = L.marker([lat, lng]).addTo(map);
+}
+
+function encodeAddress(restaurant) {
+    const addressString = `${restaurant.address} ${restaurant.city} ${restaurant.postcode}`;
+    const encodedAddress = encodeURI(addressString);
+
+    console.log(addressString);
+    console.log(encodedAddress);
+}
+
+encodeAddress(restaurantList[0]);
