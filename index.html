@@ -34,6 +34,7 @@
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
             crossorigin=""
         ></script>
+        <!-- <script src="https://ajaz.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
         <script type="module" src="script.js"></script>
     </head>
     <body>
@@ -62,21 +63,37 @@
 
             <div class="content" , id="film__content">
                 <div class="buttonSection">
-                    <button class="film__btn display__btn">
+                    <button id="film__display" class="film__btn display__btn">
                         Display Films
                     </button>
-                    <button class="film__btn random__btn">Randomize!</button>
-                    <button class="film__btn blitz__btn">Blitz Round!!</button>
+                    <button id="film__randomize" class="film__btn random__btn">
+                        Randomize!
+                    </button>
+                    <button id="film__blitz" class="film__btn blitz__btn">
+                        Blitz Round!!
+                    </button>
                 </div>
                 <div class="posters"></div>
             </div>
 
             <div class="content" , id="restaurant__content">
                 <div class="buttonSection">
-                    <button class="restaurant__btn display__btn">
+                    <button
+                        id="restaurant__display"
+                        class="restaurant__btn display__btn"
+                    >
                         Display Restaurants
                     </button>
-                    <button class="restaurant__btn random__btn">
+                    <button
+                        id="restaurant__map"
+                        class="restaurant__btn map__btn"
+                    >
+                        Show on Map
+                    </button>
+                    <button
+                        id="restaurant__randomize"
+                        class="restaurant__btn random__btn"
+                    >
                         Randomize!
                     </button>
                 </div>
@@ -88,7 +105,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div id="map"></div> -->
         </div>
     </body>
 </html>

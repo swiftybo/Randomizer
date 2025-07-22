@@ -1,9 +1,10 @@
+// Sections
 const posterSection = document.querySelector(".posters");
 
 // Buttons
-const displayBtn = document.querySelector(".display__btn");
-const randomizeBtn = document.querySelector(".random__btn");
-const blitzBtn = document.querySelector(".blitz__btn");
+const displayBtn = document.getElementById("film__display");
+const randomizeBtn = document.getElementById("film__randomize");
+const blitzBtn = document.getElementById("film__blitz");
 
 const filmList = [
     { title: "The Godfather", year: 1972, status: "not watched" },
@@ -84,7 +85,9 @@ export function randomize() {
     randomText.style.color = "chartreuse";
     randomText.textContent = "The movie we're watching is...";
 
-    getPoster(filmList[randFilmNum]);
+    setTimeout(() => {
+        getPoster(filmList[randFilmNum]);
+    }, 2000);
 }
 
 // generates to random movie posters for the user to choose from

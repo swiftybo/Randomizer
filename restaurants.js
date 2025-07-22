@@ -1,8 +1,16 @@
 const access_token =
     "pk.eyJ1IjoiYm90aGVzbG90aCIsImEiOiJjbWRhdG0waGkwY3JiMmtzYmtrb2E0cDk5In0.eOoTxdbFyqX02dY6VYpIaw";
 
+// Buttons
+const restaurantDisplayBtn = document.getElementById("restaurant__display");
+const restaurantMapBtn = document.getElementById("restaurant__map");
+const restaurantRandomizeBtn = document.getElementById("restaurant__randomize");
+
+// Sections
 const topContent = document.getElementById("content");
 const restaurantSection = document.querySelector(".restaurants");
+
+// Constants
 let map;
 
 const restaurantList = [
@@ -83,13 +91,13 @@ const restaurantList = [
 /////////////////////////////////////////////////////
 // Functions
 
-export function renderMap() {
+function renderMap() {
     console.log("creating map now");
 
     const html = `<div id="map"></div>`;
     topContent.insertAdjacentHTML("beforeend", html);
 
-    map = L.map("map").setView([51.505, -0.09], 13);
+    map = L.map("map").setView([51.505, -0.09], 8);
 
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
@@ -98,7 +106,7 @@ export function renderMap() {
     }).addTo(map);
 }
 
-export function createMarker(lat, lng) {
+function createMarker(lat, lng) {
     const restaurantMarker = L.marker([lat, lng]).addTo(map);
 }
 
@@ -126,10 +134,35 @@ function addRestaurantRow(
     restaurantSection.insertAdjacentHTML("beforeend", html);
 }
 
-restaurantList.forEach((restaurant) => {
-    addRestaurantRow(
-        restaurant.name,
-        restaurant.city,
-        restaurant.countryCuisine
-    );
+function displayRestaurants() {
+    restaurantSection.style.display = "inline";
+
+    restaurantList.forEach((restaurant) => {
+        addRestaurantRow(
+            restaurant.name,
+            restaurant.city,
+            restaurant.countryCuisine
+        );
+    });
+}
+
+function removeMap() {
+    const contentChildren = topContent.children;
+    const mapEl = contentChildren[contentChildren.length - 1];
+    mapEl.remove();
+}
+
+restaurantDisplayBtn.addEventListener("click", function () {
+    restaurantSection.innerHTML = "";
+    displayRestaurants();
+});
+
+restaurantMapBtn.addEventListener("click", function () {
+    restaurantSection.innerHTML = "";
+    renderMap();
+    createMarker(51.45607, -0.96966);
+
+    setTimeout(() => {
+        removeMap();
+    }, 3000);
 });

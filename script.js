@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////
 // Imports
 import { activateFilmButtons } from "./films.js";
-import { renderMap, createMarker } from "./restaurants.js";
+import {} from "./restaurants.js";
 
 //////////////////////////////////////////////////////
 // Constants
