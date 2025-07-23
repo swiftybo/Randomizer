@@ -28,6 +28,7 @@ const filmPage = document.getElementById("film__content");
 const restaurantPage = document.getElementById("restaurant__content");
 
 const posterSection = document.querySelector(".posters");
+const restaurantSection = document.querySelector(".restaurants");
 
 const mapContent = document.querySelector("#map");
 
@@ -40,6 +41,7 @@ filmBtn.addEventListener("click", function () {
 
     // activate display for film page
     filmPage.style.display = "flex";
+    posterSection.innerHTML = "";
     activateFilmButtons();
 });
 
@@ -48,8 +50,7 @@ restaurantBtn.addEventListener("click", function () {
     openTab.call(this);
 
     restaurantPage.style.display = "flex";
-    // renderMap();
-    // createMarker(51.45607, -0.96966);
+    restaurantSection.innerHTML = "";
 });
 
 //////////////////////////////////////////////////////
