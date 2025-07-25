@@ -207,6 +207,12 @@ function randomize() {
     const totalRestaurants = restaurantList.length;
 
     const randInt = Math.floor(Math.random() * totalRestaurants);
+    const randomRestaurant = restaurantList[randInt];
+    const randomText = document.createElement("div");
+    restaurantSection.appendChild(randomText);
+    randomText.style.fontSize = "30px";
+    randomText.style.color = "rgb(233, 130, 145)";
+    randomText.textContent = `We're going to be eating ${randomRestaurant.countryCuisine} at ${randomRestaurant.name}. The address is ${randomRestaurant.address}, ${randomRestaurant.city}, ${randomRestaurant.postcode}`;
 }
 
 restaurantDisplayBtn.addEventListener("click", function () {
@@ -226,4 +232,8 @@ restaurantMapBtn.addEventListener("click", function () {
     restaurantList.forEach((restaurant) => {
         forwardGeocode.call(restaurant, restaurant);
     });
+});
+
+restaurantRandomizeBtn.addEventListener("click", function () {
+    randomize();
 });
