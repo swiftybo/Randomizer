@@ -118,8 +118,11 @@ function renderMap() {
 }
 
 function createMarker(lat, lng) {
-    L.marker([lat, lng]).addTo(map);
-    // console.log(lat, lng);
+    L.marker([lat, lng])
+        .addTo(map)
+        .bindPopup(
+            `<b>${this.name}</b><br>Cuisine: ${this.countryCuisine}<br>${this.address}`
+        );
 }
 
 function encodeAddress(restaurant) {
@@ -129,6 +132,7 @@ function encodeAddress(restaurant) {
 
 // forward geocodes to get coordinates from address and creates marker
 async function forwardGeocode(restaurant) {
+    // console.log(this);
     const locationString = encodeAddress(restaurant);
 
     const res = await fetch(
@@ -140,15 +144,8 @@ async function forwardGeocode(restaurant) {
     const lng = data.features[0].properties.coordinates.longitude;
 
     console.log(lat, lng);
-    createMarker(lat, lng);
+    createMarker.call(this, lat, lng);
 }
-
-// function renderMarkers() {
-//     restaurantList.forEach((restaurant) => {});
-// }
-
-// forwardGeocode(restaurantList[0]);
-// createMarker([51.508, -0.09]);
 
 // Display Restaurants Functions
 function addRestaurantRow(
@@ -186,7 +183,7 @@ function displayRestaurants() {
 }
 
 // Removes the map html as there is error of reinitalising the map when the "Show on Map" button is pressed multiple times
-function removeMap() {
+export function removeMap() {
     const contentChildren = topContent.children;
     const mapEl = contentChildren[contentChildren.length - 1];
     console.log(mapEl);
@@ -194,7 +191,7 @@ function removeMap() {
 }
 
 // Checks if map is rendered already or not. Error is thrown if map is rendered and trying to click another tab e.g. display restaurants
-function checkMap() {
+export function checkMap() {
     const contentChildren = topContent.children;
     const lastChild = contentChildren[contentChildren.length - 1];
     if (lastChild.id === "map") {
@@ -204,6 +201,12 @@ function checkMap() {
         console.log("map is NOT here!!");
         return false;
     }
+}
+
+function randomize() {
+    const totalRestaurants = restaurantList.length;
+
+    const randInt = Math.floor(Math.random() * totalRestaurants);
 }
 
 restaurantDisplayBtn.addEventListener("click", function () {
@@ -221,6 +224,6 @@ restaurantMapBtn.addEventListener("click", function () {
     renderMap();
 
     restaurantList.forEach((restaurant) => {
-        forwardGeocode(restaurant);
+        forwardGeocode.call(restaurant, restaurant);
     });
 });

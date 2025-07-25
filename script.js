@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////
 // Imports
 import { activateFilmButtons } from "./films.js";
-import {} from "./restaurants.js";
+import { checkMap, removeMap } from "./restaurants.js";
 
 //////////////////////////////////////////////////////
 // Constants
@@ -38,6 +38,10 @@ const mapContent = document.querySelector("#map");
 filmBtn.addEventListener("click", function () {
     console.log("Film tab clicked");
     openTab.call(this);
+
+    if (checkMap()) {
+        removeMap();
+    }
 
     // activate display for film page
     filmPage.style.display = "flex";

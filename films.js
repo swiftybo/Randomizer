@@ -31,7 +31,7 @@ const filmList = [
 // Functions
 
 // fetches movie posters from OMDb API using film titles from film list
-export function getAllPosters() {
+function getAllPosters() {
     filmList.forEach((film) => {
         getPoster(film);
     });
@@ -77,7 +77,7 @@ async function getPoster(film) {
 }
 
 // generates random integer which relates to an index in the film list
-export function randomize() {
+function randomize() {
     const randFilmNum = Math.floor(Math.random() * filmList.length);
     const randomText = document.createElement("div");
     posterSection.appendChild(randomText);
@@ -91,7 +91,7 @@ export function randomize() {
 }
 
 // generates to random movie posters for the user to choose from
-export function blitz() {
+function blitz() {
     const randNum = Math.floor(Math.random() * 7 + 3);
     console.log(randNum);
 
