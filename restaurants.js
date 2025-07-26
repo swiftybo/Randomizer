@@ -190,15 +190,15 @@ export function removeMap() {
     mapEl.remove();
 }
 
-// Checks if map is rendered already or not. Error is thrown if map is rendered and trying to click another tab e.g. display restaurants
+// Checks if map is currentyl rendered or not. Error is thrown if map is already rendered and trying to re-render
 export function checkMap() {
     const contentChildren = topContent.children;
     const lastChild = contentChildren[contentChildren.length - 1];
     if (lastChild.id === "map") {
-        console.log("map is here!");
+        // console.log("map is here!");
         return true;
     } else {
-        console.log("map is NOT here!!");
+        // console.log("map is NOT here!!");
         return false;
     }
 }

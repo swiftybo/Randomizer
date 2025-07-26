@@ -1,10 +1,10 @@
-// Sections
-const posterSection = document.querySelector(".posters");
-
 // Buttons
 const displayBtn = document.getElementById("film__display");
 const randomizeBtn = document.getElementById("film__randomize");
 const blitzBtn = document.getElementById("film__blitz");
+
+// Sections
+const posterSection = document.querySelector(".posters");
 
 const filmList = [
     { title: "The Godfather", year: 1972, status: "not watched" },
@@ -100,18 +100,17 @@ function blitz() {
     console.log(displayedFilms);
 }
 
-export function activateFilmButtons() {
-    displayBtn.addEventListener("click", function () {
-        posterSection.innerHTML = "";
-        getAllPosters();
-    });
+displayBtn.addEventListener("click", function () {
+    posterSection.innerHTML = "";
+    console.log("display button clicked");
+    getAllPosters();
+});
 
-    randomizeBtn.addEventListener("click", function () {
-        posterSection.innerHTML = "";
-        randomize();
-    });
+randomizeBtn.addEventListener("click", function () {
+    posterSection.innerHTML = "";
+    randomize();
+});
 
-    blitzBtn.addEventListener("click", function () {
-        blitz();
-    });
-}
+blitzBtn.addEventListener("click", function () {
+    blitz();
+});

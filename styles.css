@@ -60,7 +60,8 @@ header {
 }
 
 .film__btn,
-.restaurant__btn {
+.restaurant__btn,
+.activity__btn {
     font-size: large;
     padding: 10px 30px;
     min-width: 12vw;
@@ -82,6 +83,10 @@ header {
 
 .map__btn {
     background-color: lightblue;
+}
+
+.add__btn {
+    background-color: rgb(216, 216, 3);
 }
 
 .posters {
