@@ -1,7 +1,7 @@
 // Buttons
-const displayBtn = document.getElementById("film__display");
-const randomizeBtn = document.getElementById("film__randomize");
-const blitzBtn = document.getElementById("film__blitz");
+const filmDisplayBtn = document.getElementById("film__display");
+const filmBlitzBtn = document.getElementById("film__blitz");
+const filmRandomizeBtn = document.getElementById("film__randomize");
 
 // Sections
 const posterSection = document.querySelector(".posters");
@@ -25,6 +25,7 @@ const filmList = [
     },
     { title: "A Star is Born", year: 2018, status: "not watched" },
     { title: "Your Name.", year: 2016, status: "not watched" },
+    { title: "The Witches of Eastwick", year: 1987, status: "not watched" },
 ];
 
 //////////////////////////////////////////////////////
@@ -100,17 +101,17 @@ function blitz() {
     console.log(displayedFilms);
 }
 
-displayBtn.addEventListener("click", function () {
+filmDisplayBtn.addEventListener("click", function () {
     posterSection.innerHTML = "";
     console.log("display button clicked");
     getAllPosters();
 });
 
-randomizeBtn.addEventListener("click", function () {
+filmRandomizeBtn.addEventListener("click", function () {
     posterSection.innerHTML = "";
     randomize();
 });
 
-blitzBtn.addEventListener("click", function () {
+filmBlitzBtn.addEventListener("click", function () {
     blitz();
 });

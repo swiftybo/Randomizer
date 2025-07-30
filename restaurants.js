@@ -47,7 +47,7 @@ const restaurantList = [
         city: "London",
         type: "Meal",
         continentalCuisine: "Americas",
-        countryCuisine: "USA",
+        countryCuisine: "US",
         address: "19a Rupert Street",
         postcode: "W1D7PA",
     },
@@ -65,7 +65,7 @@ const restaurantList = [
         city: "London",
         type: "Dessert",
         continentalCuisine: "Americas",
-        countryCuisine: "USA",
+        countryCuisine: "US",
         address: "38 Upper Street",
         postcode: "N10PN",
     },
@@ -164,7 +164,6 @@ function addRestaurantRow(
 
 // Displays restaurants and their details in separate entries
 function displayRestaurants() {
-    // restaurantSection.style.display = "inline";
     const html = `<div class="table__header">
                         <div class="name__field">Name</div>
                         <div class="city__field">Location</div>
@@ -212,7 +211,20 @@ function randomize() {
     restaurantSection.appendChild(randomText);
     randomText.style.fontSize = "30px";
     randomText.style.color = "rgb(233, 130, 145)";
-    randomText.textContent = `We're going to be eating ${randomRestaurant.countryCuisine} at ${randomRestaurant.name}. The address is ${randomRestaurant.address}, ${randomRestaurant.city}, ${randomRestaurant.postcode}`;
+    randomText.textContent = "Choosing your restaurant.";
+
+    setTimeout(() => {
+        randomText.textContent = "Choosing your restaurant..";
+    }, 1000);
+
+    setTimeout(() => {
+        randomText.textContent = "Choosing your restaurant...";
+    }, 2000);
+
+    setTimeout(() => {
+        randomText.textContent = `We're going to be eating ${randomRestaurant.countryCuisine} cuisine at ${randomRestaurant.name}. The address is ${randomRestaurant.address}, ${randomRestaurant.city}, ${randomRestaurant.postcode}`;
+        randomText.style.color = "darkkhaki";
+    }, 3000);
 }
 
 restaurantDisplayBtn.addEventListener("click", function () {
@@ -235,5 +247,11 @@ restaurantMapBtn.addEventListener("click", function () {
 });
 
 restaurantRandomizeBtn.addEventListener("click", function () {
+    restaurantSection.innerHTML = "";
+
+    if (checkMap()) {
+        removeMap();
+    }
+
     randomize();
 });

@@ -38,85 +38,103 @@
         <script type="module" src="script.js"></script>
     </head>
     <body>
-        <h1>Gabriella & Jordan's Randomizer!</h1>
-        <header>
-            <nav class="tabs">
-                <button class="tab__btn" id="filmTab">Films 🎥</button>
-                <button class="tab__btn" id="restaurantTab">
-                    Restaurants 🥡
-                </button>
-                <button class="tab__btn" id="activityTab">
-                    Activities ⛸️🕹️🎨
-                </button>
-                <button class="tab__btn" id="recipeTab">
-                    Cook Together 🍳
-                </button>
-            </nav>
-        </header>
+        <div id="randomizer__content">
+            <h1>Gabriella & Jordan's Randomizer!</h1>
+            <header>
+                <nav class="tabs">
+                    <button class="tab__btn" id="filmTab">Films 🎥</button>
+                    <button class="tab__btn" id="restaurantTab">
+                        Restaurants 🥡
+                    </button>
+                    <button class="tab__btn" id="activityTab">
+                        Activities ⛸️🕹️🎨
+                    </button>
+                    <button class="tab__btn" id="recipeTab">
+                        Cook Together 🍳
+                    </button>
+                </nav>
+            </header>
 
-        <div id="content">
-            <div class="content" , id="home__content" , style="display: block">
-                <p style="font-size: 40px; color: rgb(30, 233, 30)">
-                    Click one of the tabs to start!!
-                </p>
-            </div>
-
-            <div class="content" , id="film__content">
-                <div class="buttonSection">
-                    <button id="film__display" class="film__btn display__btn">
-                        Display Films
-                    </button>
-                    <button id="film__randomize" class="film__btn random__btn">
-                        Randomize!
-                    </button>
-                    <button id="film__blitz" class="film__btn blitz__btn">
-                        Blitz Round!!
-                    </button>
+            <div id="content">
+                <div
+                    class="content"
+                    ,
+                    id="home__content"
+                    ,
+                    style="display: block"
+                >
+                    <p style="font-size: 40px; color: rgb(30, 233, 30)">
+                        Click one of the tabs to start!!
+                    </p>
                 </div>
-                <div class="posters"></div>
-            </div>
 
-            <div class="content" , id="restaurant__content">
-                <div class="buttonSection">
-                    <button
-                        id="restaurant__display"
-                        class="restaurant__btn display__btn"
-                    >
-                        Display Restaurants
-                    </button>
-                    <button
-                        id="restaurant__map"
-                        class="restaurant__btn map__btn"
-                    >
-                        Show on Map
-                    </button>
-                    <button
-                        id="restaurant__randomize"
-                        class="restaurant__btn random__btn"
-                    >
-                        Randomize!
-                    </button>
+                <div class="content" , id="film__content">
+                    <div class="buttonSection">
+                        <button
+                            id="film__display"
+                            class="film__btn display__btn"
+                        >
+                            Display Films
+                        </button>
+                        <button
+                            id="film__randomize"
+                            class="film__btn random__btn"
+                        >
+                            Randomize!
+                        </button>
+                        <button id="film__blitz" class="film__btn blitz__btn">
+                            Blitz Round!!
+                        </button>
+                    </div>
+                    <div class="posters"></div>
                 </div>
-                <div class="restaurants"></div>
-            </div>
 
-            <div class="content" , id="activity__content">
-                <div class="buttonSection">
-                    <button
-                        id="activity__display"
-                        class="activity__btn display__btn"
-                    >
-                        Display Activities
-                    </button>
-                    <button id="activity__add" class="activity__btn add__btn">
-                        Add Activity
-                    </button>
-                    <button
-                        id="activity__randomize"
-                        class="activity__btn random__btn"
-                    >
-                        Randomize!
-                    </button>
+                <div class="content" , id="restaurant__content">
+                    <div class="buttonSection">
+                        <button
+                            id="restaurant__display"
+                            class="restaurant__btn display__btn"
+                        >
+                            Display Restaurants
+                        </button>
+                        <button
+                            id="restaurant__map"
+                            class="restaurant__btn map__btn"
+                        >
+                            Show on Map
+                        </button>
+                        <button
+                            id="restaurant__randomize"
+                            class="restaurant__btn random__btn"
+                        >
+                            Randomize!
+                        </button>
+                    </div>
+                    <div class="restaurants"></div>
+                </div>
+
+                <div class="content" , id="activity__content">
+                    <div class="buttonSection">
+                        <button
+                            id="activity__display"
+                            class="activity__btn display__btn"
+                        >
+                            Display Activities
+                        </button>
+                        <button
+                            id="activity__add"
+                            class="activity__btn add__btn"
+                        >
+                            Add Activity
+                        </button>
+                        <button
+                            id="activity__randomize"
+                            class="activity__btn random__btn"
+                        >
+                            Randomize!
+                        </button>
+                    </div>
+                    <div class="activities"></div>
                 </div>
             </div>
         </div>

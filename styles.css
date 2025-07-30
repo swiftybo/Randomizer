@@ -2,6 +2,17 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-image: linear-gradient(
+        to bottom right,
+        rgb(211, 240, 211),
+        rgb(105, 219, 105)
+    );
+    height: 100vh;
+}
+
+#randomizer__content {
+    margin: 4rem;
+    background-color: #f1f1f1;
 }
 
 h1 {
@@ -105,12 +116,12 @@ header {
 
 #map {
     height: 40vh;
-    width: 40vw;
+    width: 70%;
 }
 
 .table__header {
     outline: 3px solid blue;
-    width: 800px;
+    width: 100%;
     height: 60px;
     border-radius: 5px;
     font-size: 22px;
@@ -121,7 +132,7 @@ header {
 
 .table__row {
     outline: 1px solid black;
-    width: 800px;
+    width: 100%;
     height: 60px;
     border-radius: 5px;
     font-size: 18px;
@@ -145,4 +156,26 @@ header {
 .restaurants {
     display: flex;
     flex-wrap: wrap;
+}
+
+table,
+th,
+td {
+    border: 1px solid darkkhaki;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+th {
+    background-color: rgb(255, 89, 29);
+    font-size: large;
+    padding: 10px;
+}
+
+td {
+    min-width: 250px;
+}
+
+tr:hover {
+    background-color: #ffbc64;
 }

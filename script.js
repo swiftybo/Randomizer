@@ -2,6 +2,7 @@
 // Imports
 import {} from "./films.js";
 import { checkMap, removeMap } from "./restaurants.js";
+import {} from "./activities.js";
 
 //////////////////////////////////////////////////////
 // Constants
